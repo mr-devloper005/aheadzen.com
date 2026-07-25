@@ -52,6 +52,25 @@ const base = {
   radius: '0.75rem',
 } satisfies Omit<TaskTheme, 'kicker' | 'note'>
 
+// Profile inherits the home page's dark violet identity so /profile and
+// /profile/[username] read as a continuation of the home experience.
+const profileDark = {
+  dark: true,
+  fontDisplay: YELP_FONT,
+  fontBody: YELP_FONT,
+  bg: '#050505',
+  surface: '#0b0e11',
+  raised: '#10151a',
+  text: '#f5f7f8',
+  muted: '#a8b0b8',
+  line: 'rgba(255,255,255,0.10)',
+  accent: '#9b6cff',
+  accentSoft: '#211738',
+  onAccent: '#ffffff',
+  glow: 'rgba(155,108,255,0.22)',
+  radius: '0.75rem',
+} satisfies Omit<TaskTheme, 'kicker' | 'note'>
+
 export const taskThemes: Record<TaskKey, TaskTheme> = {
   article: { ...base, kicker: 'Articles', note: 'In-depth reads, guides and stories worth your time.' },
   listing: { ...base, kicker: 'Businesses', note: 'Find, compare and connect with local businesses.' },
@@ -59,7 +78,7 @@ export const taskThemes: Record<TaskKey, TaskTheme> = {
   image: { ...base, kicker: 'Photos', note: 'A visual feed of standout images and galleries.' },
   sbm: { ...base, kicker: 'Bookmarks', note: 'Curated resources and links worth saving.' },
   pdf: { ...base, kicker: 'Documents', note: 'Downloadable guides, reports and references.' },
-  profile: { ...base, kicker: 'People', note: 'Discover creators, businesses and profiles.' },
+  profile: { ...profileDark, kicker: 'People', note: 'Discover creators, businesses and profiles.' },
 }
 
 export function getTaskTheme(task: TaskKey): TaskTheme {

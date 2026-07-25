@@ -97,8 +97,18 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--slot4-accent-fill) 28%, transparent);
-  color: var(--slot4-page-text);
+  background: #b99cff;
+  color: #09050f;
+}
+
+.editable-marquee { animation: editable-marquee 34s linear infinite; }
+.editable-marquee:hover { animation-play-state: paused; }
+@keyframes editable-marquee { to { transform: translateX(calc(-50% - .75rem)); } }
+.editable-float { animation: editable-float 6s ease-in-out infinite; }
+.editable-float-delayed { animation: editable-float 7.5s ease-in-out -2s infinite; }
+@keyframes editable-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
 }
 
 ::-webkit-scrollbar-track {
